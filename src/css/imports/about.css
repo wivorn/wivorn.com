@@ -1,0 +1,357 @@
+#about {
+  position: relative;
+
+  h1 {
+    margin: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 524px;
+    top: 0;
+    background: #F6F9FC;
+    z-index: -10;
+    transform: skewY(-9deg);
+  }
+
+  a {
+    padding-bottom: 2px;
+    cursor: pointer;
+  }
+
+  .about-me {
+    max-width: 450px;
+    min-height: 220px;
+    padding: 40px;
+    color: white;
+    position: relative;
+    background: var(--darkGrey);
+    letter-spacing: 1.5px;
+    line-height: 2;
+    font-size: 14px;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 25px rgba(0,0,0,.3);
+    z-index: -1;
+    margin-left: 6%;
+    margin-top: -30px;
+
+    &:before {
+      content: '> ';
+      color: var(--mainColor);
+    }
+  }
+
+  .about-skills {
+    position: relative;
+    max-width: 450px;
+    min-height: 220px;
+    padding: 50px 40px;
+    background: white;
+    left: 50%;
+    top: -30px;
+    margin-left: -70px;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    font-size: 0;
+    z-index: 1;
+    overflow: hidden;
+
+    @media screen and (max-width: 850px) {
+      margin-left: calc(50% - 480px);
+    }
+
+    #skill-back {
+      position: absolute;
+      bottom: 20px;
+      left: 40px;
+      font-size: 16px;
+      color: var(--mainColor);
+      background: none;
+      border: 0;
+      opacity: 0;
+      transition: all 0.3s;
+      transform: translateY(40px);
+      cursor: pointer;
+    }
+
+    &.show-code-description {
+      #skill-back {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      #code-details {
+        transform: translateX(0);
+      }
+
+      .skill {
+        p {
+          opacity: 0;
+        }
+
+        .icon.code {
+          transform: translate3d(-40px, 20px, 0);
+        }
+      }
+    }
+
+    &.show-design-description {
+      #skill-back {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      #design-details {
+        transform: translateX(0);
+      }
+
+      .skill {
+        p {
+          opacity: 0;
+        }
+
+        .icon.design {
+          transform: translate3d(-160px, 20px, 0);
+        }
+
+        .icon.code {
+          opacity: 0;
+        }
+      }
+    }
+
+    &.show-prototype-description {
+      #skill-back {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      #prototype-details {
+        transform: translateX(0);
+      }
+
+      .skill {
+        p {
+          opacity: 0;
+        }
+
+        .icon.product {
+          transform: translate3d(-280px, 20px, 0);
+        }
+
+        .icon.code, .icon.design {
+          opacity: 0;
+        }
+      }
+    }
+
+    .skill-details {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 120px;
+      font-size: 16px;
+      background: var(--mainColor);
+      padding: 30px;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      transition: transform 0.3s;
+      transform: translateX(100%);
+
+      li {
+        list-style: none;
+        padding: 8px 16px;
+        flex: 1 0 auto;
+        color: white;
+        border: 1px solid white;
+        height: 36px;
+        margin: 0 4px 8px;
+        text-align: center;
+      }
+    }
+
+    .skill {
+      display: inline-block;
+      width: 33%;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        .icon {
+          transform: translate3d(0, -5px, 0);
+        }
+      }
+
+      .icon {
+        margin: 20px auto;
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.3s;
+      }
+
+      .code {
+        width: 46px;
+        height: 28px;
+        background: url('/code.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      .design {
+        width: 27px;
+        height: 28px;
+        background: url('/design.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      .product {
+        width: 26px;
+        height: 28px;
+        background: url('/product.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+
+      p {
+        font-size: 12px;
+        color: #666666;
+        line-height: 1.5;
+        letter-spacing: 2px;
+        transition: opacity 0.3s;
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .about-me {
+      margin-left: 3%;
+      margin-top: -30px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    padding-bottom: 50px;
+
+    &:after {
+      height: 620px;
+    }
+
+    .about-me {
+      margin: 16px auto 0;
+      max-width: 450px;
+    }
+
+    .about-skills {
+      top: 0;
+      left: 0;
+      position: relative;
+      margin: 0 auto;
+      max-width: 450px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    &:after {
+      top: 15px;
+      height: 595px;
+    }
+
+    .about-me {
+      padding: 30px;
+      line-height: 1.7;
+    }
+  }
+
+  @media screen and (max-width: 490px) {
+    .about-me, .about-skills {
+      max-width: 400px;
+    }
+
+		.about-skills .skill-details {
+			padding: 16px;
+		}
+
+    .about-skills.show-code-description .skill .icon.code {
+      transform: translate3d(-32px, 20px, 0);
+    }
+
+    .about-skills.show-design-description .skill .icon.design {
+      transform: translate3d(-140px, 20px, 0);
+    }
+
+    .about-skills.show-prototype-description .skill .icon.product {
+      transform: translate3d(-244px, 20px, 0);
+    }
+  }
+
+  @media screen and (max-width: 440px) {
+    .about-me {
+      padding: 30px;
+      max-width: 360px;
+    }
+
+    .about-skills {
+      padding: 30px;
+      max-width: 360px;
+
+      .skill p {
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+
+      .skill-details {
+        font-size: 14px;
+      }
+    }
+
+    .about-skills.show-code-description .skill .icon.code {
+      transform: translate3d(-20px, 20px, 0);
+    }
+
+    .about-skills.show-design-description .skill .icon.design {
+      transform: translate3d(-120px, 20px, 0);
+    }
+
+    .about-skills.show-prototype-description .skill .icon.product {
+      transform: translate3d(-218px, 20px, 0);
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .about-me, .about-skills {
+      max-width: 320px;
+    }
+
+    .about-me {
+      font-size: 12px;
+      min-height: 200px;
+    }
+
+    .about-skills {
+      padding-top: 40px;
+
+      .skill-details {
+        left: 100px;
+      }
+      .skill p {
+        font-size: 11px;
+      }
+
+      #skill-back {
+        left: 30px;
+      }
+    }
+
+    .about-skills.show-code-description .skill .icon.code {
+      transform: translate3d(-25px, 20px, 0);
+    }
+
+    .about-skills.show-design-description .skill .icon.design {
+      transform: translate3d(-110px, 20px, 0);
+    }
+
+    .about-skills.show-prototype-description .skill .icon.product {
+      transform: translate3d(-196px, 20px, 0);
+    }
+  }
+}

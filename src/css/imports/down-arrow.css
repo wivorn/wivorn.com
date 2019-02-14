@@ -1,0 +1,42 @@
+.down-arrow {
+  position: relative;
+  display: block;
+  width: 28px;
+  height: 25px;
+  font-size: 0;
+  margin: 0 auto;
+  cursor: pointer;
+
+  .block {
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background: #CCC;
+    transition: transform 200ms, color 200ms;
+
+    & + .block {
+      margin-left: 3px;
+    }
+
+    &:nth-child(2n) {
+      transform: translateY(6px);
+    }
+
+    &:nth-child(3) {
+      transform: translateY(12px);
+    }
+  }
+
+  &:hover {
+    .block {
+      background: var(--mainColor);
+
+      &:nth-child(2n) {
+        transform: translateY(10px);
+      }
+      &:nth-child(3) {
+        transform: translateY(18px);
+      }
+    }
+  }
+}

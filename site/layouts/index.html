@@ -1,9 +1,226 @@
 {{ define "main" }}
 
-<h1>Hugo with Webpack, Sass, and PostCSS</h1>
+<section id="signal">
+	<h1 id="signal-text">HELLO</h1>
+	<div id="signal-wave">
+		<canvas id="signal-inner"></canvas>
+	</div>
+</section>
 
-<h3>Hooray 🎉 - you've built this with <a href="https://github.com/netlify/victor-hugo">Victor-Hugo</a>!</h3>
+<section id="about" class="link">
+	<div class="container">
+		<h1>About</h1>
+		<div id="about-me" class="about-me">Experienced <em>web developer</em> with a big heart for <em>design</em>. Passionate about building digital products that positively <em>impact lives</em> and <em>delight users</em>. Loves to write beautiful code that brings design to life.</div>
+		<div class="about-skills" id="skill">
+			<div id="skill-back">Close</div>
+			<div class="skill" id="code-skill">
+				<div class="icon code"></div>
+				<p>FRONTEND</p>
+			</div>
+			<div class="skill-details" id="code-details">
+				<li>HTML5</li>
+				<li>CSS3</li>
+				<li>JS</li>
+				<li>Vue</li>
+				<li>Angular</li>
+				<li>React</li>
+				<li>Cordova</li>
+				<li>SASS</li>
+			</div>
+			<div class="skill" id="design-skill">
+				<div class="icon design"></div>
+				<p>UI/UX</p>
+			</div>
+			<div class="skill-details" id="design-details">
+				<li>Sketch</li>
+				<li>UI</li>
+				<li>Photoshop</li>
+				<li>UX</li>
+				<li>Logo</li>
+				<li>Illustrator</li>
+				<li>Responsive</li>
+			</div>
+			<div class="skill" id="prototype-skill">
+				<div class="icon product"></div>
+				<p>BACKEND</p>
+			</div>
+			<div class="skill-details" id="prototype-details">
+				<li>NodeJS</li>
+				<li>SQL/NoSQL</li>
+				<li>Python</li>
+				<li>API</li>
+				<li>Jenkins</li>
+				<li>CI/CD</li>
+			</div>
+		</div>
+	</div>
+	<a href="#work" class="down-arrow">
+		<div class="block"></div>
+		<div class="block"></div>
+		<div class="block"></div>
+		<div class="block"></div>
+		<div class="block"></div>
+	</a>
+</section>
 
-<a href="{{ "/tech" | relURL }}">Check out the tech</a>
+<section id="work" class="link">
+	<div class="container">
+		<h1>Work</h1>
+		<div class="year" data-year="2017">
+			<div class="portfolio">
+				<div class="description">
+					<h3 class="title">Real Estate E-Commerce</h3>
+					<p>Built a complete e-commerce platform for a leading condo development company based in Bangkok. Work includes frontend development, interfacing with Moltin backend and custom integration with local payment gateway.</p>
+					<ul class="tags">
+						<li>Frontend</li>
+						<li>Backend</li>
+					</ul>
+				</div>
+				<div class="slideshow">
+					<img data-src="https://res.cloudinary.com/wivorn/image/upload/w_auto,c_scale/v1550137993/projects/realestate.jpg" alt="Real Estate E-Commerce" class="cld-responsive">
+				</div>
+			</div>
+			<div class="portfolio right">
+				<div class="description">
+					<h3 class="title">Food Delivery Platform</h3>
+					<p>Crafted various responsive themes for multi-vendor Laravel web application. Created interactive modular components to support various theme configurations.</p>
+					<ul class="tags">
+						<li>Frontend</li>
+					</ul>
+				</div>
+				<div class="slideshow">
+					<img data-src="https://res.cloudinary.com/wivorn/image/upload/w_auto,c_scale/v1550137993/projects/fooddelivery.jpg" alt="Food Delivery Platform" class="cld-responsive">
+				</div>
+			</div>
+			<div class="portfolio">
+				<div class="description">
+					<h3 class="title">Online Payment Prototype</h3>
+					<p>Created mobile interactive web prototypes for a large telecomunication company to test drive new design and interactions.</p>
+					<ul class="tags">
+						<li>Frontend</li>
+					</ul>
+				</div>
+				<div class="slideshow">
+					<img data-src="https://res.cloudinary.com/wivorn/image/upload/w_auto,c_scale/v1550137993/projects/payment.jpg" alt="Online Payment Prototype" class="cld-responsive">
+				</div>
+			</div>
+			<div class="portfolio right">
+				<div class="description">
+					<h3 class="title">Allergy Management App</h3>
+					<p>Built an MVP from the ground up. Designed and developed a full allergy management platform with patient facing mobile app and doctor dashboard to monitor and analyze patient data.</p>
+					<ul class="tags">
+						<li>Design</li>
+						<li>Frontend</li>
+						<li>Backend</li>
+					</ul>
+				</div>
+				<div class="slideshow">
+					<img data-src="https://res.cloudinary.com/wivorn/image/upload/w_auto,c_scale/v1550137993/projects/allergy.jpg" alt="Allergy Management App" class="cld-responsive">
+				</div>
+			</div>
+		</div>
+		<div class="year" data-year="2016">
+			<div class="portfolio">
+				<div class="description">
+					<h3 class="title">Component Styleguide</h3>
+					<p>Crafted a resusable responsive component library for use in the development of VW Sweden website.</p>
+					<ul class="tags">
+						<li>Frontend</li>
+					</ul>
+				</div>
+				<div class="slideshow">
+					<img data-src="https://res.cloudinary.com/wivorn/image/upload/w_auto,c_scale/v1550137993/projects/styleguide.jpg" alt="Component Styleguide" class="cld-responsive">
+				</div>
+			</div>
+			<div class="portfolio right">
+				<div class="description">
+					<h3 class="title">Online Booking Platform</h3>
+					<p>Architected and built a booking platform from the ground up for Hubba Thailand, a leading co-working space in Bangkok. Work includes frontend SPA development, backend API design and development, deployment pipeline and dev-ops.</p>
+					<ul class="tags">
+						<li>Frontend</li>
+						<li>Backend</li>
+					</ul>
+				</div>
+				<div class="slideshow">
+					<img data-src="https://res.cloudinary.com/wivorn/image/upload/w_auto,c_scale/v1550137993/projects/coworking.jpg" alt="Online Booking Platform" class="cld-responsive">
+				</div>
+			</div>
+			<div class="portfolio">
+				<div class="description">
+					<h3 class="title">Corporate Website</h3>
+					<p>Created a highly dynamic custom wordpress site for a corporate venture backed by one of the largest bank in Thailand.</p>
+					<ul class="tags">
+						<li>Frontend</li>
+						<li>Backend</li>
+					</ul>
+				</div>
+				<div class="slideshow">
+					<img data-src="https://res.cloudinary.com/wivorn/image/upload/w_auto,c_scale/v1550137993/projects/corporate.jpg" alt="Corporate Website" class="cld-responsive">
+				</div>
+			</div>
+		</div>
+	</div>
+	<a href="#clients" class="down-arrow">
+		<div class="block"></div>
+		<div class="block"></div>
+		<div class="block"></div>
+		<div class="block"></div>
+		<div class="block"></div>
+	</a>
+</section>
+
+<section id="clients" class="link">
+	<div class="container">
+		<h1>Clients</h1>
+		<h2>Awesome companies I've had the pleasure of working with</h2>
+		<div class="logos">
+			<div class="company-logo">
+				<img data-src="https://res.cloudinary.com/wivorn/image/upload/w_auto,c_scale/v1550137993/logos/digital_ocean_logo.png" alt="Digital Ocean" class="cld-responsive">
+			</div>
+			<div class="company-logo">
+				<img data-src="https://res.cloudinary.com/wivorn/image/upload/w_auto,c_scale/v1550137993/logos/centurylink_logo.png" alt="CenturyLink" class="cld-responsive">
+			</div>
+			<div class="company-logo">
+				<img data-src="https://res.cloudinary.com/wivorn/image/upload/w_auto,c_scale/v1550137993/logos/telus_logo.png" alt="Telus" class="cld-responsive">
+			</div>
+			<div class="company-logo">
+				<img data-src="https://res.cloudinary.com/wivorn/image/upload/w_auto,c_scale/v1550137993/logos/tmx_logo.png" alt="TMX Logo" class="cld-responsive">
+			</div>
+			<div class="company-logo">
+				<img data-src="https://res.cloudinary.com/wivorn/image/upload/w_auto,c_scale/v1550137993/logos/vw_logo.png" alt="Volkswagen" class="cld-responsive">
+			</div>
+			<div class="company-logo">
+				<img data-src="https://res.cloudinary.com/wivorn/image/upload/w_auto,c_scale/v1550137993/logos/dtac_logo.png" alt="DTAC" class="cld-responsive">
+			</div>
+			<div class="company-logo">
+				<img data-src="https://res.cloudinary.com/wivorn/image/upload/w_auto,c_scale/v1550137993/logos/scb_logo.png" alt="SCB" class="cld-responsive">
+			</div>
+			<div class="company-logo">
+				<img data-src="https://res.cloudinary.com/wivorn/image/upload/w_auto,c_scale/v1550137993/logos/digital_venture_logo.png" alt="Digital Ventures" class="cld-responsive">
+			</div>
+		</div>
+	</div>
+	<a href="#contact" class="down-arrow">
+		<div class="block"></div>
+		<div class="block"></div>
+		<div class="block"></div>
+		<div class="block"></div>
+		<div class="block"></div>
+	</a>
+</section>
+
+<section id="contact" class="link">
+	<div class="container">
+		<h1>Contact</h1>
+		<h2>Want to get in touch?</h2>
+		<div class="social">
+			<a href="https://www.linkedin.com/in/wivornc/">Linkedin</a>
+			<a href="https://github.com/wivorn">Github</a>
+			<a href="https://twitter.com/wchowat">Twitter</a>
+			<a href="https://dribbble.com/nroviw">Dribbble</a>
+			<a href="mailto:wivorn.c@gmail.com">E-mail</a>
+		</div>
+	</div>
+</section>
 
 {{ end }}

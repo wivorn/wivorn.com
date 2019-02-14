@@ -1,0 +1,36 @@
+#signal {
+  position: relative;
+  opacity: 1;
+
+  h1 {
+    display: block;
+    font-size: 40px;
+    color: rgba(102,102,102,0.9);
+    text-align: center;
+    padding: 150px 20px;
+    margin: 0;
+    text-shadow: 0 5px 10px rgba(102,102,102,0.5);
+
+    @media only screen and (min-width: 320px) {
+      font-size: calc( 40px + (50 - 40) * (100vw - 320px) / (480 - 320) );
+    }
+
+    @media only screen and (min-width: 480px) {
+      font-size: calc( 50px + (80 - 50) * (100vw - 480px) / (768 - 480) );
+    }
+
+    @media only screen and (min-width: 768px) {
+      font-size: 80px;
+    }
+  }
+
+  #signal-wave {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+}

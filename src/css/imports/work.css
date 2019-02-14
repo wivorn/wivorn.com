@@ -1,0 +1,187 @@
+#work {
+  .year {
+    position: relative;
+    padding: 50px 0;
+
+    &:before {
+      content: attr(data-year);
+      display: block;
+      position: absolute;
+      font-size: 200px;
+      color: rgba(0,0,0,.03);
+      z-index: -1;
+      font-family: Helvetica Neue, Helvetica, sans-serif;
+      font-weight: bold;
+      top: -70px;
+      line-height: 1;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  .portfolio {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 64px;
+    padding: 36px 0;
+    display: flex;
+    justify-content: space-between;
+
+    &.right {
+      .description {
+        order: 2;
+        text-align: right;
+
+        &:before {
+          left: auto;
+          right: 0;
+        }
+      }
+      .slideshow {
+        padding: 0 24px 0 0;
+        order: 1;
+      }
+    }
+  }
+
+  .description {
+    position: relative;
+    flex: 3;
+    padding: 0 24px;
+
+    .tags {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        padding: 8px;
+        border: 1px solid #FD746C;
+        color: #FD746C;
+        border-radius: 4px;
+        font-size: 14px;
+
+        & + li {
+          margin-left: 8px;
+        }
+      }
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 64px;
+      background: #FD746C;
+    }
+
+    .title {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    p {
+      font-family: "Droid Serif", serif;
+      line-height: 1.5;
+      color: #666;
+    }
+  }
+
+  .slideshow {
+    flex: 5;
+    padding: 0 0 0 24px;
+
+    img {
+      width: 100%;
+      height: auto;
+      box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .portfolio {
+      flex-direction: column;
+
+      .slideshow {
+        flex: 1;
+        order: 1;
+        padding: 0;
+        margin-bottom: 36px;
+      }
+
+      .description {
+        flex: 1;
+        order: 2;
+        padding: 0;
+        text-align: center;
+        max-width: 500px;
+        margin: 0 auto;
+
+        p {
+          line-height: 1.8;
+        }
+
+        &:before {
+          width: 50px;
+          height: 3px;
+          top: auto;
+          bottom: -50px;
+          left: 50%;
+          margin-left: -25px;
+        }
+      }
+
+      &.right {
+        .slideshow {
+          padding: 0;
+        }
+
+        .description {
+          text-align: center;
+
+          &:before {
+            left: 50%;
+            right: auto;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .year {
+      &:before {
+        font-size: 150px;
+        top: -60px;
+      }
+    }
+    .portfolio {
+      padding-top: 0;
+
+      .slideshow {
+        margin-bottom: 24px;
+      }
+
+      .description {
+        h3 {
+          font-size: 18px;
+        }
+
+        p {
+          font-size: 14px;
+          margin-bottom: 24px;
+        }
+
+        .tags {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,232 @@
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 17px 0;
+  font-size: 12px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
+  z-index: 10;
+	text-transform: uppercase;
+
+  .home {
+    display: inline-block;
+    vertical-align: middle;
+
+    &:hover {
+      .logo {
+        .block-1 {
+          transform: translate3d(18px, 5px, 0);
+        }
+        .block-3 {
+          transform: translate3d(12px, 10px, 0) rotate(-180deg);
+        }
+        .block-4 {
+          transform: translate3d(0, 0, 0);
+        }
+        .block-6, .block-7 {
+          transform: translate3d(6px, 0, 0);
+        }
+      }
+    }
+  }
+
+  .logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+
+  .fname, .lname {
+    color: $grey;
+    letter-spacing: 1.5px;
+  }
+
+  .lname {
+    color: var(--lightGrey);
+    font-weight: 300;
+    margin-left: 5px;
+  }
+
+  @media (max-width: 600px) {
+    .name {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%,-50%,0);
+      text-align: center;
+    }
+  }
+
+  .links {
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+
+    a {
+      position: relative;
+      letter-spacing: 1.5px;
+      margin-left: 20px;
+      line-height: 26px;
+      transition: color 0.3s;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        height: 3px;
+        width: 0;
+        background: var(--lightGrey);
+        transform: translate3d(-50%,0,0);
+        transition: all 0.3s;
+      }
+
+      &:hover, &:active {
+        color: var(--lightGrey);
+
+        &:after {
+          width: 20px;
+        }
+      }
+
+      &.active {
+        color: var(--mainColor);
+
+        &:after {
+          width: 20px;
+          background: var(--mainColor);
+        }
+
+        &:hover:after {
+          width: 100%;
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      display: block;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding-top: 24px;
+      transform: translate3d(100%,0,0);
+      transition: transform 0.3s;
+      background: rgba(255,255,255,0.95);
+
+      a {
+        display: block;
+        text-align: center;
+        margin-top: 30px;
+        margin-left: 0;
+        font-size: 16px;
+
+        &.active:hover:after {
+          width: 30px;
+        }
+      }
+    }
+  }
+
+  &.open {
+    .links {
+      transform: translate3d(0,0,0);
+    }
+
+    .menu-button {
+      &:before {
+        transform: translate3d(0,0,0);
+      }
+      &:after {
+        transform: translate3d(0,0,0);
+      }
+      .menu-lines {
+        transform: translate3d(12px,0,0);
+
+        &:before {
+          transform: translate3d(-6px,-6px,0);
+        }
+        &:after {
+          transform: translate3d(-6px,6px,0);
+        }
+      }
+    }
+  }
+
+  .menu-button {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    color: #444;
+    background: none;
+    cursor: pointer;
+    transition: transform .3s;
+    z-index: 1;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 25px;
+      height: 3px;
+      transform: translate3d(10px,0,0);
+      background: var(--mainColor);
+      transition: transform .3s;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: 0;
+      width: 25px;
+      height: 3px;
+      background: var(--mainColor);
+      transform: translate3d(10px,0,0);
+      transition: transform .3s;
+    }
+
+    .menu-lines {
+      position: absolute;
+      top: 18px;
+      left: 0;
+      width: 25px;
+      height: 3px;
+      background: var(--mainColor);
+      transform: translate3d(0,0,0);
+      transition: transform .3s;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 3px;
+        background: var(--mainColor);
+        transform: translate3d(5px,-6px,0);
+        transition: transform .3s;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 3px;
+        background: var(--mainColor);
+        transform: translate3d(5px,6px,0);
+        transition: transform .3s;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+}

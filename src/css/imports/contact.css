@@ -1,0 +1,33 @@
+#contact {
+  position: relative;
+  padding-bottom: 100px;
+
+  h2 {
+    margin-bottom: 64px;
+  }
+
+  .social {
+    display: block;
+    text-align: center;
+
+    a {
+      display: inline-block;
+      margin-bottom: 16px;
+      font-size: 18px;
+      border: 1px solid #FD746C;
+      padding: 8px;
+      border-radius: 4px;
+      color: #FD746C;
+      transition: all 0.3s;
+
+      &:hover {
+        background: #FD746C;
+        color: white;
+      }
+
+      & + a {
+        margin-left: 8px;
+      }
+    }
+  }
+}

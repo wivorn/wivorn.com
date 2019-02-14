@@ -1,0 +1,106 @@
+.logo {
+  position: relative;
+  width: 33px;
+  height: 26px;
+  font-size: 0;
+
+  .block-3, .block-4, .block-6 {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  &:hover {
+    .block-1 {
+      transform: translate3d(18px, 5px, 0);
+    }
+    .block-3 {
+      transform: translate3d(12px, 10px, 0) rotate(-180deg);
+    }
+    .block-4 {
+      transform: translate3d(0, 0, 0);
+    }
+    .block-6, .block-7 {
+      transform: translate3d(6px, 0, 0);
+    }
+  }
+
+  .block-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background: #999;
+    transition: transform 0.3s 0.2s;
+  }
+
+  .block-2 {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    display: inline-block;
+    width: 3px;
+    height: 17px;
+    background: #999;
+    transition: transform 0.3s;
+  }
+
+  .block-3 {
+    position: absolute;
+    top: 0;
+    left: 6px;
+    display: inline-block;
+    width: 3px;
+    height: 10px;
+    background: #999;
+    transition: transform 0.3s 0.1s;
+  }
+
+  .block-4 {
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    display: inline-block;
+    width: 3px;
+    height: 10px;
+    background: #999;
+    transition: transform 0.3s;
+  }
+
+  .block-5 {
+    position: absolute;
+    top: 0;
+    left: 12px;
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background: #999;
+    transition: transform 0.3s;
+  }
+
+  .block-6 {
+    position: absolute;
+    top: 0;
+    left: 18px;
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background: #999;
+    transition: transform 0.3s;
+  }
+
+  .block-7 {
+    position: absolute;
+    top: 0;
+    left: 24px;
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background: #999;
+    transition: transform 0.3s;
+  }
+
+  .block-1, .block-2, .block-3, .block-4, .block-5, .block-6, .block-7 {
+    background: #FD746C;
+  }
+}
