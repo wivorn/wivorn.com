@@ -90,7 +90,7 @@
         }
 
         .icon.code {
-          transform: translate3d(-40px, 20px, 0);
+          transform: translate3d(-41px, 20px, 0);
         }
       }
     }
@@ -111,7 +111,7 @@
         }
 
         .icon.design {
-          transform: translate3d(-160px, 20px, 0);
+          transform: translate3d(-163px, 20px, 0);
         }
 
         .icon.code {
@@ -136,7 +136,7 @@
         }
 
         .icon.product {
-          transform: translate3d(-280px, 20px, 0);
+          transform: translate3d(-285px, 20px, 0);
         }
 
         .icon.code, .icon.design {

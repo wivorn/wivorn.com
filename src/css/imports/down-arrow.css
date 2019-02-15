@@ -7,6 +7,10 @@
   margin: 0 auto;
   cursor: pointer;
 
+	@media screen	and (max-width: 768px) {
+		display: none;
+	}
+
   .block {
     display: inline-block;
     width: 3px;

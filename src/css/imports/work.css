@@ -52,14 +52,21 @@
       list-style: none;
       margin: 0;
       padding: 0;
+			cursor: pointer;
 
       li {
         display: inline-block;
         padding: 8px;
-        border: 1px solid #FD746C;
-        color: #FD746C;
+        border: 1px solid var(--mainColor);
+        color: var(--mainColor);
         border-radius: 4px;
         font-size: 14px;
+				transition: background 0.3s, color 0.3s;
+
+				&:hover {
+					background: var(--mainColor);
+					color: white;
+				}
 
         & + li {
           margin-left: 8px;
@@ -75,20 +82,22 @@
       top: 0;
       width: 3px;
       height: 64px;
-      background: #FD746C;
+      background: var(--mainColor);
     }
 
     .title {
       margin-top: 0;
-      margin-bottom: 16px;
-      font-size: 24px;
+      margin-bottom: 12px;
+      font-size: 28px;
       font-weight: bold;
       color: #333;
     }
 
     p {
       font-family: "Droid Serif", serif;
-      line-height: 1.5;
+			font-size: 14px;
+      line-height: 1.8;
+			margin-bottom: 24px;
       color: #666;
     }
   }
@@ -106,43 +115,58 @@
 
   @media screen and (max-width: 768px) {
     .portfolio {
+			position: relative;
       flex-direction: column;
+
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: -20px;
+				left: 50%;
+				height: 20px;
+				width: 3px;
+				background: var(--mainColor);
+				transform: translate3d(-50%, 0, 0);
+				box-shadow: -12px -12px 0 0 var(--mainColor), -6px -6px 0 0 var(--mainColor), 6px -6px 0 0 var(--mainColor), 12px -12px 0 0 var(--mainColor);
+			}
+
+			&:last-of-type:after {
+				display: none;
+			}
 
       .slideshow {
         flex: 1;
-        order: 1;
+        order: 2;
         padding: 0;
         margin-bottom: 36px;
       }
 
       .description {
         flex: 1;
-        order: 2;
+        order: 1;
         padding: 0;
         text-align: center;
         max-width: 500px;
-        margin: 0 auto;
+        margin: 0 auto 40px;
 
         p {
           line-height: 1.8;
         }
 
         &:before {
-          width: 50px;
-          height: 3px;
-          top: auto;
-          bottom: -50px;
-          left: 50%;
-          margin-left: -25px;
+          display: none;
         }
       }
 
       &.right {
         .slideshow {
           padding: 0;
+					order: 2;
         }
 
         .description {
+					order: 1;
           text-align: center;
 
           &:before {

@@ -1,27 +1,32 @@
 #contact {
   position: relative;
-  padding-bottom: 100px;
+  padding-bottom: 160px;
 
   h2 {
     margin-bottom: 64px;
   }
 
+	@media screen and (max-width: 480px) {
+		padding-bottom: 100px;
+	}
+
   .social {
     display: block;
     text-align: center;
+		padding: 20px 0;
 
     a {
       display: inline-block;
       margin-bottom: 16px;
       font-size: 18px;
-      border: 1px solid #FD746C;
+      border: 1px solid var(--mainColor);
       padding: 8px;
       border-radius: 4px;
-      color: #FD746C;
+      color: var(--mainColor);
       transition: all 0.3s;
 
       &:hover {
-        background: #FD746C;
+        background: var(--mainColor);
         color: white;
       }
 
