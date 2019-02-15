@@ -180,9 +180,11 @@
 
   @media screen and (max-width: 480px) {
     .year {
+			padding-bottom: 0;
+
       &:before {
-        font-size: 150px;
-        top: -60px;
+        font-size: 120px;
+        top: -40px;
       }
     }
     .portfolio {

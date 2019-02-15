@@ -263,6 +263,8 @@
   }
 
   @media screen and (max-width: 490px) {
+		padding-bottom: 70px;
+
     .about-me, .about-skills {
       max-width: 400px;
     }
