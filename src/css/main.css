@@ -29,6 +29,10 @@
 	font-display: 'auto';
 }
 
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
 html {
   font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 }

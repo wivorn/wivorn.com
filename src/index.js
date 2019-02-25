@@ -25,19 +25,22 @@ import cloudinary from 'cloudinary-core';
     this.height = this.ratio * (opt.height || 100);
     this.height_2 = this.height / 2;
 
-    this.MAX = (this.height_2) - 4;
+    this.MAX = this.height_2 - 4;
 
     // Constructor opt
 
     this.amplitude = opt.amplitude || 1;
     this.speed = opt.speed || 0.2;
     this.frequency = opt.frequency || 6;
-    this.color = (function hex2rgb(hex) {
-      var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-      hex = hex.replace(shorthandRegex, function(m, r, g, b) { return r + r + g + g + b + b; });
-      var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-      return result ? parseInt(result[1], 16).toString() + ',' + parseInt(result[2], 16).toString() + ',' + parseInt(result[3], 16).toString() : null;
-    })(opt.color || '#fff') || '255,255,255';
+    this.color =
+      (function hex2rgb(hex) {
+        var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+        hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+          return r + r + g + g + b + b;
+        });
+        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? parseInt(result[1], 16).toString() + ',' + parseInt(result[2], 16).toString() + ',' + parseInt(result[3], 16).toString() : null;
+      })(opt.color || '#fff') || '255,255,255';
 
     // Interpolation
 
@@ -58,8 +61,8 @@ import cloudinary from 'cloudinary-core';
     if (opt.cover) {
       this.canvas.style.width = this.canvas.style.height = '100%';
     } else {
-      this.canvas.style.width = (this.width / this.ratio) + 'px';
-      this.canvas.style.height = (this.height / this.ratio) + 'px';
+      this.canvas.style.width = this.width / this.ratio + 'px';
+      this.canvas.style.height = this.height / this.ratio + 'px';
     }
 
     this.container = opt.container || document.body;
@@ -75,7 +78,7 @@ import cloudinary from 'cloudinary-core';
   }
 
   SiriWave.prototype._interpolate = function(propertyStr) {
-    const increment = this[ propertyStr + 'InterpolationSpeed' ];
+    const increment = this[propertyStr + 'InterpolationSpeed'];
 
     if (Math.abs(this._interpolation[propertyStr] - this[propertyStr]) <= increment) {
       this[propertyStr] = this._interpolation[propertyStr];
@@ -114,7 +117,7 @@ import cloudinary from 'cloudinary-core';
     var i = -2.1;
     while ((i += 0.01) <= 2.1) {
       var y = this._ypos(i, attenuation);
-      if (Math.abs(i) >= 1.90) y = this.height_2;
+      if (Math.abs(i) >= 1.9) y = this.height_2;
       this.ctx.lineTo(this._xpos(i), y);
     }
 
@@ -187,19 +190,32 @@ import cloudinary from 'cloudinary-core';
     autostart: true
   });
 
-  window.addEventListener('resize', function resize() {
-    signalWave.stop();
-    signalWave = new SiriWave({
-      container: signal,
-      width: signal.clientWidth,
-      height: document.getElementById('signal-text').clientHeight,
-      speed: 0.01,
-      color: '#FD746C',
-      frequency: 4,
-      amplitude: 0.5,
-      autostart: true
-    });
-  }, false);
+  var width = $(window).width();
+
+  window.addEventListener(
+    'resize',
+    function resize() {
+      const newWidth = $(window).width();
+      if (newWidth === width) {
+        return;
+      }
+
+      signalWave.stop();
+      signalWave = new SiriWave({
+        container: signal,
+        width: signal.clientWidth,
+        height: document.getElementById('signal-text').clientHeight,
+        speed: 0.02,
+        color: '#FD746C',
+        frequency: 4,
+        amplitude: 0.5,
+        autostart: true
+      });
+
+      width = newWidth;
+    },
+    false
+  );
 
   window.onload = function() {
     var skill = document.getElementById('skill');
@@ -229,9 +245,7 @@ import cloudinary from 'cloudinary-core';
 
     var $anchorLinks = $('a[href*="#"]:not([href="#"])');
     $anchorLinks.click(function() {
-      if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '')
-          || location.hostname === this.hostname) {
-
+      if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') || location.hostname === this.hostname) {
         $('#nav').removeClass('open');
         var target = $(this.hash);
         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
