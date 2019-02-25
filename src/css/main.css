@@ -109,6 +109,10 @@ body {
   padding-top: 60px;
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+	@media screen and (max-width: 600px) {
+		padding-top: 0;
+	}
 }
 
 p {

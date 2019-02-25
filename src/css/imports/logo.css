@@ -3,12 +3,16 @@
   width: 33px;
   height: 26px;
   font-size: 0;
+	transform: translateX(3px);
+	transition: transform 0.3s;
 
   .block-3, .block-4, .block-6 {
     transform: translate3d(0, 5px, 0);
   }
 
   &:hover {
+		transform: translateX(0);
+
     .block-1 {
       transform: translate3d(18px, 5px, 0);
     }
