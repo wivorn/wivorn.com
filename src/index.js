@@ -241,7 +241,12 @@ import cloudinary from 'cloudinary-core';
 
     // jQuery smooth scroll on link click
     var mainNavHeight = $('#nav').outerHeight();
-    var topOffset = 20 + mainNavHeight;
+    var topOffset = 20;
+    var windowWidth = $(window).width();
+
+    if (windowWidth > 600) {
+      topOffset += mainNavHeight;
+    }
 
     var $anchorLinks = $('a[href*="#"]:not([href="#"])');
     $anchorLinks.click(function() {
@@ -275,6 +280,7 @@ import cloudinary from 'cloudinary-core';
 
     function scrollFunc() {
       var scrollTop = $(this).scrollTop() + topOffset + 10;
+
       $anchorLinks.removeClass('active');
       $anchorLinks.eq(0).addClass('active');
 
@@ -291,6 +297,12 @@ import cloudinary from 'cloudinary-core';
     $window.scroll(scrollFunc);
 
     $window.resize(function() {
+      if ($(window).width() <= 600) {
+        topOffset = 20;
+      } else {
+        topOffset = 20 + mainNavHeight;
+      }
+
       getPositions();
       $window.scroll(scrollFunc);
     });

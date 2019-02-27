@@ -2,14 +2,20 @@
   position: relative;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
-    background: #F6F9FC;
+    background: #f6f9fc;
     z-index: -10;
     transform: skewY(-9deg);
+  }
+
+  @media screen and (max-width: 480px) {
+    &:after {
+      top: 24px;
+    }
   }
 
   .logos {
@@ -36,7 +42,7 @@
       filter: grayscale(100%);
       height: 80px;
       width: auto;
-			transition: filter 1s;
+      transition: filter 1s;
 
       &:hover {
         filter: none;
