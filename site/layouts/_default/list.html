@@ -1,0 +1,56 @@
+{{ define "main" }}
+
+<div id="blog">
+	<div class="container">
+		<h1>Blog</h1>
+		<h2>My musings on code, design and building great products</h2>
+		{{ $paginator := .Paginate (where .Pages ".Params.type" "!=" "page") }}
+
+		{{ if gt $paginator.TotalPages 0 }}
+		{{ range $page := $paginator.Pages }}
+		<a class="entry" href="{{ .Permalink }}">
+			<header class="entry-header">
+				<div class="entry-link">
+					<h3>{{ .Title }}</h3>
+				</div>
+				<small>
+					<time class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</time>
+					<span class="read-time">{{ .ReadingTime }} min read</span>
+				</small>
+			</header>
+			<section class="entry-content">
+				<p>{{ .Description | plainify | htmlUnescape }}</p>
+			</section>
+		</a>
+		{{ end }}
+		{{ end }}
+
+		{{ if gt $paginator.TotalPages 1 }}
+		<footer class="page-footer">
+			<nav class="pagination">
+				{{ if $paginator.HasPrev }}
+				<a class="prev" href="{{ $paginator.Prev.URL }}">← Previous Page</a>
+				{{ end }}
+				{{ if $paginator.HasNext }}
+				<a class="next" href="{{ $paginator.Next.URL }}">Next Page →</a>
+				{{ end }}
+			</nav>
+		</footer>
+		{{ end }}
+	</div>
+</div>
+{{ end }}
+
+{{ define "script" }}
+<script>
+	var nav = document.getElementById('nav');
+
+	document.getElementsByClassName('menu-button')[0].onclick = function () {
+		if (nav.classList.contains('open')) {
+			nav.classList.remove('open');
+		} else {
+			nav.classList.add('open');
+		}
+	}
+</script>
+{{ end }}

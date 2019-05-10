@@ -19,14 +19,14 @@
       display: inline-block;
       margin-bottom: 16px;
       font-size: 18px;
-      border: 1px solid var(--mainColor);
+      border: 1px solid var(--primary);
       padding: 8px;
       border-radius: 4px;
-      color: var(--mainColor);
+      color: var(--primary);
       transition: all 0.3s;
 
       &:hover {
-        background: var(--mainColor);
+        background: var(--primary);
         color: white;
       }
 

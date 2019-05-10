@@ -1,8 +1,12 @@
 baseurl = "/"
-languageCode = "en-us"
-languageLang = "en"
 title = "Wivorn Chowattanakul"
 enableRobotsTXT = true
+PygmentsCodeFences = true
+PygmentsStyle = "monokai"
+pygmentsUseClasses = true
+
+[params]
+	dateFormat = "January 2, 2006"
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:

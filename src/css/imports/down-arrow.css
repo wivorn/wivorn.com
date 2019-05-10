@@ -33,7 +33,7 @@
 
   &:hover {
     .block {
-      background: var(--mainColor);
+      background: var(--primary);
 
       &:nth-child(2n) {
         transform: translateY(10px);

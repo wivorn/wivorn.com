@@ -224,3 +224,14 @@
 </section>
 
 {{ end }}
+
+{{ define "footer" }}
+{{ partial "footer" . }}
+{{ end }}
+
+{{ define "script" }}
+{{ $script := .Site.Data.webpack.main }}
+{{ with $script.js }}
+	<script src="{{ relURL . }}"></script>
+{{ end }}
+{{ end }}

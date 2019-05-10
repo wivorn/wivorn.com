@@ -134,11 +134,11 @@
       }
 
       &.active {
-        color: var(--mainColor);
+        color: var(--primary);
 
         &:after {
           width: 20px;
-          background: var(--mainColor);
+          background: var(--primary);
         }
 
         &:hover:after {
@@ -237,7 +237,7 @@
       width: 25px;
       height: 3px;
       transform: translate3d(10px,0,0);
-      background: var(--mainColor);
+      background: var(--primary);
       transition: transform .3s;
     }
 
@@ -248,7 +248,7 @@
       left: 0;
       width: 25px;
       height: 3px;
-      background: var(--mainColor);
+      background: var(--primary);
       transform: translate3d(10px,0,0);
       transition: transform .3s;
     }
@@ -259,7 +259,7 @@
       left: 0;
       width: 25px;
       height: 3px;
-      background: var(--mainColor);
+      background: var(--primary);
       transform: translate3d(0,0,0);
       transition: transform .3s;
 
@@ -268,7 +268,7 @@
         position: absolute;
         width: 25px;
         height: 3px;
-        background: var(--mainColor);
+        background: var(--primary);
         transform: translate3d(5px,-6px,0);
         transition: transform .3s;
       }
@@ -278,7 +278,7 @@
         position: absolute;
         width: 25px;
         height: 3px;
-        background: var(--mainColor);
+        background: var(--primary);
         transform: translate3d(5px,6px,0);
         transition: transform .3s;
       }

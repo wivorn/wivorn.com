@@ -263,7 +263,8 @@ import cloudinary from 'cloudinary-core';
     });
 
     // Scroll to top when click on logo
-    $('a[href="#"]').click(function() {
+    $('a.home').click(function(e) {
+      e.preventDefault();
       $('html,body').animate({ scrollTop: 0 }, 500);
     });
 

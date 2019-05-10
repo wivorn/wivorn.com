@@ -1,6 +1,6 @@
 <nav id="nav">
 	<div class="container">
-		<a class="home" href="#">
+		<a class="home" href="/">
 			<div class="logo">
 				<div class="block-1"></div>
 				<div class="block-2"></div>
@@ -16,10 +16,11 @@
 			</span>
 		</a>
 		<div class="links">
-			<a href="#about" class="active">About</a>
+			<a href="#about" {{ if .IsHome }}class="active"{{ end }}>About</a>
 			<a href="#work">Work</a>
 			<a href="#clients">Clients</a>
 			<a href="#contact">Contact</a>
+			<a href="/blog" {{ if eq "blog" .Section }}class="active"{{ end }}>Blog</a>
 		</div>
 		<div class="menu-button">
 			<span class="menu-lines"></span>

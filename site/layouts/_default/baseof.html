@@ -1,36 +1,13 @@
 <!doctype html>
-<html lang="{{ $.Site.Language.Lang }}">
+<html lang="en">
+	{{ partial "head" . }}
+	<body>
+		{{ block "header" . }}{{ partial "header" . }}{{ end }}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
-	<title>{{ $.Site.Title }}</title>
-	<meta name="description" content="An experienced web developer with a big heart for design"/>
+		{{ block "main" . }}{{ end }}
 
-	<!-- Disable tap highlight on IE -->
-	<meta name="msapplication-tap-highlight" content="no">
-	<!-- Color the status bar on mobile devices -->
-	<meta name="theme-color" content="#FD746C">
+		{{ block "footer" . }}{{ end }}
 
-	<link href="https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans" rel="stylesheet">
-  {{ $stylesheet := .Site.Data.webpack.main }}
-  {{ with $stylesheet.css }}
-    <link href="{{ relURL . }}" rel="stylesheet">
-	{{ end }}
-</head>
-
-<body>
-  {{ block "header" . }}{{ partial "header" . }}{{end}}
-
-  {{ block "main" . }}{{end}}
-
-  {{ block "footer" . }}{{ partial "footer" . }}{{end}}
-
-  {{ $script := .Site.Data.webpack.main }}
-  {{ with $script.js }}
-		<script src="{{ relURL . }}"></script>
-	{{ end }}
-</body>
-
+		{{ block "script" . }}{{ end }}
+	</body>
 </html>
