@@ -180,6 +180,10 @@
 			box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 			background: rgba(255, 255, 255, 0.95);
 
+			&.hide {
+				transform: translateY(100%);
+			}
+
 			a {
 				display: inline-block;
 				margin: 0;
@@ -187,6 +191,10 @@
 				padding: 20px 0;
 				text-align: center;
 				font-size: 12px;
+
+				&:after {
+					display: none;
+				}
 			}
 		}
   }

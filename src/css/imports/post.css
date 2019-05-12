@@ -1,5 +1,3 @@
-
-
 .post-single {
 	max-width: var(--maxWidth);
 	margin: 0 auto;
@@ -153,7 +151,7 @@
 		img {
 			border-radius: 4px;
 			max-width: calc(100% + 72px);
-			margin: 1em -36px;
+			margin: 0 -36px;
 
 			@media screen and (max-width: 732px) {
 				border-radius: 0;
@@ -211,6 +209,154 @@
 				border: 1px solid #dfe2e5;
     			padding: 6px 12px;
 				color: var(--textColor);
+			}
+		}
+	}
+}
+
+.post-footer {
+	padding: 0 0 40px;
+
+	.post-tags {
+		margin: 40px 0;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+
+		li {
+			display: inline-block;
+			list-style: none;
+			padding: 0;
+
+			+ li {
+				margin-left: 8px;
+			}
+
+			a {
+				display: inline-block;
+				padding: 6px 10px;
+				border-radius: 4px;
+				font-size: 12px;
+				line-height: 1;
+				border: 1px solid var(--primary);
+				text-transform: capitalize;
+				color: var(--primary);
+
+				&:hover {
+					color: white;
+					background: var(--primary);
+				}
+			}
+		}
+	}
+
+	.post-others {
+		margin: 120px auto 40px;
+		display: flex;
+
+		@media screen and (max-width: 480px) {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		div {
+			position: relative;
+			flex: 1;
+			margin: 0 0 2em;
+			padding: 0 24px;
+
+			&.prev-article {
+				text-align: left;
+
+				a:before {
+					position: absolute;
+					top: 0;
+					left: 0;
+					display: inline-block;
+					content: '←';
+					margin-right: 4px;
+				}
+			}
+
+			&.next-article {
+				text-align: right;
+
+				a:after {
+					position: absolute;
+					top: 0;
+					right: 0;
+					content: '→';
+					margin-left: 4px;
+				}
+			}
+
+			a {
+				line-height: 1.4;
+				font-size: 16px;
+				color: var(--primary);
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.profile {
+		display: flex;
+		align-items: center;
+		text-align: left;
+		margin-top: 90px;
+		color: var(--darkGrey);
+
+		img {
+			width: auto;
+			height: 100px;
+			border-radius: 50%;
+			margin-right: 20px;
+		}
+
+		.profile-content {
+			.content {
+				margin-bottom: 8px;
+
+				a {
+					color: var(--primary);
+				}
+			}
+
+			.social {
+				display: block;
+				text-align: center;
+
+				a {
+					display: inline-block;
+					margin-top: 8px;
+					font-size: 12px;
+					border: 1px solid var(--primary);
+					padding: 8px;
+					border-radius: 4px;
+					color: var(--primary);
+					transition: all 0.3s;
+
+					&:hover {
+						background: var(--primary);
+						color: white;
+					}
+
+					& + a {
+						margin-left: 8px;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: 520px) {
+			flex-direction: column;
+
+			img {
+				margin: 0 0 12px;
+			}
+
+			.profile-content {
+				text-align: center;
 			}
 		}
 	}

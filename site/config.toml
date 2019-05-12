@@ -4,6 +4,7 @@ enableRobotsTXT = true
 PygmentsCodeFences = true
 PygmentsStyle = "monokai"
 pygmentsUseClasses = true
+Paginate = 10
 
 [params]
 	dateFormat = "January 2, 2006"

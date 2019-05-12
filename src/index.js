@@ -243,9 +243,13 @@ import cloudinary from 'cloudinary-core';
     var mainNavHeight = $('#nav').outerHeight();
     var topOffset = 20;
     var windowWidth = $(window).width();
+    var lastScrollTop;
 
     if (windowWidth > 600) {
       topOffset += mainNavHeight;
+    } else {
+      lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      $(window).on('scroll', bottomNavScroll);
     }
 
     var $anchorLinks = $('a[href*="#"]:not([href="#"])');
@@ -294,18 +298,33 @@ import cloudinary from 'cloudinary-core';
       }
     }
 
+    function bottomNavScroll() {
+      var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScrollTop > lastScrollTop) {
+        // downscroll
+        $('#nav .links').addClass('hide');
+      } else {
+        // upscroll
+        $('#nav .links').removeClass('hide');
+      }
+
+      lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
+    }
+
     getPositions();
-    $window.scroll(scrollFunc);
+    $window.on('scroll', scrollFunc);
 
     $window.resize(function() {
-      if ($(window).width() <= 600) {
+      if ($window.width() <= 600) {
         topOffset = 20;
+        lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
       } else {
         topOffset = 20 + mainNavHeight;
       }
 
       getPositions();
-      $window.scroll(scrollFunc);
+      $window.on('scroll', scrollFunc);
     });
   };
 })();

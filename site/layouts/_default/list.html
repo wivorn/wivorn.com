@@ -2,8 +2,8 @@
 
 <div id="blog">
 	<div class="container">
-		<h1>Blog</h1>
-		<h2>My musings on code, design and building great products</h2>
+		<h1>{{ .Title }}</h1>
+		<h2>{{ .Content }}</h2>
 		{{ $paginator := .Paginate (where .Pages ".Params.type" "!=" "page") }}
 
 		{{ if gt $paginator.TotalPages 0 }}
@@ -44,6 +44,7 @@
 {{ define "script" }}
 <script>
 	var nav = document.getElementById('nav');
+	var lastScrollTop;
 
 	document.getElementsByClassName('menu-button')[0].onclick = function () {
 		if (nav.classList.contains('open')) {
@@ -52,5 +53,22 @@
 			nav.classList.add('open');
 		}
 	}
+
+	function bottomNavScroll() {
+		var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+		if (currentScrollTop > lastScrollTop) {
+			// downscroll
+			document.getElementsByClassName('links')[0].classList.add('hide');
+		} else {
+			// upscroll
+			document.getElementsByClassName('links')[0].classList.remove('hide');
+		}
+
+		lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
+	}
+
+	lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	window.addEventListener('scroll', bottomNavScroll);
 </script>
 {{ end }}

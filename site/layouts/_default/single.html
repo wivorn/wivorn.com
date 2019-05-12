@@ -6,16 +6,30 @@
     <div class="post-meta">
 			<time class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</time>
 			<span class="read-time">{{ .ReadingTime }} min read</span>
+		</div>
   </header>
   <div class="post-content">{{ .Content }}</div>
   <footer class="post-footer">
-    {{ if .Params.tags }}
-    <ul class="post-tags">
-      {{ range .Params.tags }}
-      <li><a href="{{$.Site.BaseURL}}tags/{{ . | urlize }}/">{{ . }}</a></li>
-      {{ end }}
-    </ul>
-    {{ end }}
+		{{ if .Params.tags }}
+			<ul class="post-tags">
+				{{ range .Params.tags }}
+				<li><a href="{{$.Site.BaseURL}}tags/{{ . | urlize }}/">{{ . }}</a></li>
+				{{ end }}
+			</ul>
+		{{ end }}
+		{{ partial "profile" }}
+		<nav class="post-others">
+			<div class="prev-article">
+				{{ with .PrevInSection }}
+					<a rel="prev" href="{{ .Permalink }}">{{ .Title }}</a>
+				{{ end }}
+			</div>
+			<div class="next-article">
+			{{ with .NextInSection }}
+				<a rel="next" href="{{ .Permalink }}">{{ .Title }}</a>
+			{{ end }}
+			</div>
+		</nav>
   </footer>
   <!-- Comments area start -->
   {{ if not (eq .Params.comments false) }}
@@ -39,4 +53,36 @@
   {{ end }}
 </article>
 
+{{ end }}
+
+{{ define "script" }}
+<script>
+	var nav = document.getElementById('nav');
+	var lastScrollTop;
+
+	document.getElementsByClassName('menu-button')[0].onclick = function () {
+		if (nav.classList.contains('open')) {
+			nav.classList.remove('open');
+		} else {
+			nav.classList.add('open');
+		}
+	}
+
+	function bottomNavScroll() {
+		var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+		if (currentScrollTop > lastScrollTop) {
+			// downscroll
+			document.getElementsByClassName('links')[0].classList.add('hide');
+		} else {
+			// upscroll
+			document.getElementsByClassName('links')[0].classList.remove('hide');
+		}
+
+		lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
+	}
+
+	lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	window.addEventListener('scroll', bottomNavScroll);
+</script>
 {{ end }}

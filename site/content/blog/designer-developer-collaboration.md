@@ -2,7 +2,12 @@
 title: Designer Developer Collaboration
 description: I recently built a website for a social enterprise leveraging technology to help people facing homelessness.
 date: 2018-03-02T17:15:00Z
+tags:
+- test
+- development
 ---
+
+![image](https://images.unsplash.com/photo-1557275357-072087771588?ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus nulla at volutpat diam. Non arcu risus quis varius quam quisque. Viverra aliquet eget sit amet. Gravida neque convallis a cras semper auctor neque vitae tempus.
 
@@ -50,8 +55,6 @@ SiriWave.prototype._interpolate = function(propertyStr) {
 
 Tristique magna sit amet purus gravida. Donec enim diam vulputate ut pharetra sit. Lorem dolor sed viverra ipsum. Scelerisque purus semper eget duis at tellus at urna condimentum. Ornare suspendisse sed nisi lacus. Id diam vel quam elementum pulvinar etiam non quam lacus. Nulla pharetra diam sit amet nisl suscipit adipiscing. Viverra accumsan in nisl nisi scelerisque eu ultrices. Nec ultrices dui sapien eget mi proin sed. Est placerat in egestas erat imperdiet sed euismod nisi. Lectus magna fringilla urna porttitor rhoncus dolor purus. Sem nulla pharetra diam sit amet nisl. Vestibulum lectus mauris ultrices eros in.
 
-![image](https://images.unsplash.com/photo-1557275357-072087771588?ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80)
-
 Volutpat lacus laoreet non curabitur gravida arcu ac tortor. Pharetra pharetra massa massa ultricies mi. Eget velit aliquet sagittis id consectetur purus. Blandit libero volutpat sed cras ornare arcu dui. Etiam erat velit scelerisque in dictum non consectetur a erat. At imperdiet dui accumsan sit amet nulla facilisi. Lorem ipsum dolor sit amet consectetur. Quisque egestas diam in arcu. Eu mi bibendum neque egestas congue quisque egestas diam. Semper viverra nam libero justo. Ullamcorper a lacus vestibulum sed arcu.
 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -71,5 +74,3 @@ Risus nullam eget felis eget nunc lobortis. In egestas erat imperdiet sed. Variu
 Tristique magna sit amet purus gravida. Donec enim diam vulputate ut pharetra sit. Lorem dolor sed viverra ipsum. Scelerisque purus semper eget duis at tellus at urna condimentum. Ornare suspendisse sed nisi lacus. Id diam vel quam elementum pulvinar etiam non quam lacus. Nulla pharetra diam sit amet nisl suscipit adipiscing. Viverra accumsan in nisl nisi scelerisque eu ultrices. Nec ultrices dui sapien eget mi proin sed. Est placerat in egestas erat imperdiet sed euismod nisi. Lectus magna fringilla urna porttitor rhoncus dolor purus. Sem nulla pharetra diam sit amet nisl. Vestibulum lectus mauris ultrices eros in.
 
 Volutpat lacus laoreet non curabitur gravida arcu ac tortor. Pharetra pharetra massa massa ultricies mi. Eget velit aliquet sagittis id consectetur purus. Blandit libero volutpat sed cras ornare arcu dui. Etiam erat velit scelerisque in dictum non consectetur a erat. At imperdiet dui accumsan sit amet nulla facilisi. Lorem ipsum dolor sit amet consectetur. Quisque egestas diam in arcu. Eu mi bibendum neque egestas congue quisque egestas diam. Semper viverra nam libero justo. Ullamcorper a lacus vestibulum sed arcu.
-
----

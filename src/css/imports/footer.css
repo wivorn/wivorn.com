@@ -1,21 +1,8 @@
 footer {
   position: relative;
   padding: 40px 0;
-  color: #666;
-  text-align: center;
-
-  p {
-    margin: 0 auto;
-    font-size: 12px;
-    font-style: italic;
-    line-height: 1.6;
-  }
 
   @media screen and (max-width: 600px) {
-    font-size: 12px;
     padding: 40px 0 100px;
-    p {
-      max-width: 260px;
-    }
   }
 }
