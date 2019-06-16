@@ -6,7 +6,7 @@
 		h1 {
 			line-height: 1;
 			margin-top: 16px;
-			margin-bottom: 12px;
+			margin-bottom: 8px;
 
 			@media screen and (max-width: 480px) {
 				font-size: 54px;
@@ -16,7 +16,7 @@
 		}
 
 		h2 {
-			font-size: 24px;
+			font-size: 18px;
 			font-family: 'Open Sans';
 			color: var(--lightGrey);
 			text-align: left;
@@ -26,6 +26,7 @@
 
 			&:after {
 				left: 0;
+				width: 100%;
 				margin-left: 0;
 				transform: none;
 			}
@@ -46,11 +47,9 @@
 			@media screen and (max-width: 480px) {
 				padding: 20px;
 				margin: 0 -20px;
-				box-shadow: none;
 
 				&:hover {
 					color: var(--darkGrey);
-					box-shadow: none;
 				}
 			}
 		}

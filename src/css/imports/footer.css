@@ -2,6 +2,13 @@ footer {
   position: relative;
   padding: 40px 0;
 
+	.footer-message {
+		font-size: 14px;
+		color: var(--grey);
+		text-align: center;
+		font-style: italic;
+	}
+
   @media screen and (max-width: 600px) {
     padding: 40px 0 100px;
   }

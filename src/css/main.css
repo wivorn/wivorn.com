@@ -13,6 +13,7 @@
 @import "imports/blog.css";
 @import "imports/post.css";
 @import "imports/syntax.css";
+@import "imports/profile.css";
 
 :root {
   --primary: #fd746c;

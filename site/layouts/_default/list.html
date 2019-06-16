@@ -3,7 +3,7 @@
 <div id="blog">
 	<div class="container">
 		<h1>{{ .Title }}</h1>
-		<h2>{{ .Content }}</h2>
+		<h2>On code, design and building great products</h2>
 		{{ $paginator := .Paginate (where .Pages ".Params.type" "!=" "page") }}
 
 		{{ if gt $paginator.TotalPages 0 }}
@@ -37,6 +37,7 @@
 			</nav>
 		</footer>
 		{{ end }}
+		{{ partial "profile" }}
 	</div>
 </div>
 {{ end }}

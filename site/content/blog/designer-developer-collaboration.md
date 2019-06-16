@@ -2,6 +2,7 @@
 title: Designer Developer Collaboration
 description: I recently built a website for a social enterprise leveraging technology to help people facing homelessness.
 date: 2018-03-02T17:15:00Z
+draft: true
 tags:
 - test
 - development
