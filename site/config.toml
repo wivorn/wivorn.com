@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://willc.dev"
 title = "Wivorn Chowattanakul"
 enableRobotsTXT = true
 PygmentsCodeFences = true
